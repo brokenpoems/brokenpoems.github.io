@@ -125,14 +125,14 @@
 
   
   <url>
-    <loc>http://crfv.cf/categories/Something/</loc>
+    <loc>http://crfv.cf/categories/OI/</loc>
     <lastmod>2020-10-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://crfv.cf/categories/OI/</loc>
+    <loc>http://crfv.cf/categories/Something/</loc>
     <lastmod>2020-10-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
