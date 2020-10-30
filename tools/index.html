@@ -17,7 +17,7 @@
     
     
     
-        <link rel="shortcut icon" href="https://www.gravatar.com/avatar/99095?s=256&amp;d=identicon">
+        <link rel="shortcut icon" href="https://www.gravatar.com/avatar/57862?s=256&amp;d=identicon">
         
     
 
@@ -53,7 +53,7 @@
     
     <title>
         
-            二分法求解 | Nothing...
+            tools | Nothing...
         
     </title>
     
@@ -214,121 +214,21 @@
 </aside>
   
   <main id="main-contain" class="mdui-container mdui-m-t-5">
-    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
-  <header class="mdui-card-media">
-    
-    
-      <div class="post-header"> 
-  <a class="post-header-title" href="/2020/08/12/%E4%BA%8C%E5%88%86%E6%B3%95%E6%B1%82%E8%A7%A3/">二分法求解</a>
-  <div class="post-header-meta">
-    <span>
-      <span class="iconfont icon-calendar"></span>
-      发布于:&nbsp;2020-08-12
-    </span>
-    <span>
-      <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2020-10-30
-    </span>
-    <span>
-      <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/Something/">Something</a>
-    </span>
-    
-      <span>
-        <span class="iconfont icon-eye"></span>
-        阅读次数:&nbsp;
-        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
-      </span>
-    
-  </div>
-</div>   
-    
-
-
-
-    
-    
-    <div class="mdui-card-menu">
-    
-      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
-      <ul class="mdui-menu" id="share_menu">
-        <li class="mdui-menu-item">
-          <a href="http://service.weibo.com/share/share.php?appkey=&title=二分法求解&url=http://crfv.cf/2020/08/12/%E4%BA%8C%E5%88%86%E6%B3%95%E6%B1%82%E8%A7%A3/&pic=http://crfv.cf/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
-        </li>
-        <li class="mdui-menu-item">
-          <a href="https://twitter.com/intent/tweet?text=二分法求解&url=http://crfv.cf/2020/08/12/%E4%BA%8C%E5%88%86%E6%B3%95%E6%B1%82%E8%A7%A3/&via=brokenpoems" target="_blank" class="mdui-ripple">分享到 Twitter</a>
-        </li>
-        <li class="mdui-menu-item">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=http://crfv.cf/2020/08/12/%E4%BA%8C%E5%88%86%E6%B3%95%E6%B1%82%E8%A7%A3/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
-        </li>
-        <li class="mdui-menu-item">
-          <a href="https://plus.google.com/share?url=http://crfv.cf/2020/08/12/%E4%BA%8C%E5%88%86%E6%B3%95%E6%B1%82%E8%A7%A3/" target="_blank" class="mdui-ripple">分享到 Google+</a>
-        </li>
-        <li class="mdui-menu-item">
-          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://crfv.cf/2020/08/12/%E4%BA%8C%E5%88%86%E6%B3%95%E6%B1%82%E8%A7%A3/&title=二分法求解" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
-        </li>
-        <li class="mdui-menu-item">
-          <a href="http://connect.qq.com/widget/shareqq/index.html?site=Nothing...&title=二分法求解&summary=None。。。&pics=http://crfv.cf/null&url=http://crfv.cf/2020/08/12/%E4%BA%8C%E5%88%86%E6%B3%95%E6%B1%82%E8%A7%A3/" target="_blank" class="mdui-ripple">分享到 QQ</a>
-        </li>
-        <li class="mdui-menu-item">
-          <a href="https://telegram.me/share/url?url=http://crfv.cf/2020/08/12/%E4%BA%8C%E5%88%86%E6%B3%95%E6%B1%82%E8%A7%A3/&text=二分法求解" target="_blank" class="mdui-ripple">分享到 Telegram</a>
-        </li>
-      </ul>
-    
-  </div>
-  </header>
-  
-  
-  
-  
-  
-  <div class="mdui-card-content mdui-typo mdui-p-x-4">
-    <!--markdown-->##二分
-<p><font color=#008000><del>没为啥就是想写了</del></font><br><strong>模板</strong></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> l=beign,r=end;</span><br><span class="line"><span class="keyword">while</span>(l&lt;r)<span class="comment">/*while(r-l&lt;eps)*/</span>&#123;</span><br><span class="line">	<span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(check(mid))&#123;</span><br><span class="line">		l=mid+<span class="number">1</span>;<span class="comment">//r=mid-1;</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		r=mid<span class="number">-1</span>;<span class="comment">//l=mid-1;</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">ans=l;</span><br></pre></td></tr></table></figure>
-<p>####用处:<br>1.在某情况成立的情况下,其规模更大或其规模更小的情况也成立,就可以用二分法求ans<br>2.与其他算法结合,并非检查的函数check,而是e.g.：A-B problemの排序去重二分查找=。=<br>####时间复杂度<br>$O(log_2n)$<br>####应用<br>1.快速幂和快速乘</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">quick_pow</span><span class="params">(T a,T b,T c)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> res=<span class="number">1</span>;<span class="comment">//attention!</span></span><br><span class="line">	<span class="keyword">while</span>(b)&#123;</span><br><span class="line">		<span class="keyword">if</span>(b&amp;<span class="number">1</span>)res=res*a%c;</span><br><span class="line">		a*=a%c;</span><br><span class="line">		b&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">quick_mul</span><span class="params">(T a,T b,T c)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> res=<span class="number">0</span>;<span class="comment">//attention!</span></span><br><span class="line">	<span class="keyword">while</span>(b)&#123;</span><br><span class="line">		<span class="keyword">if</span>(b&amp;<span class="number">1</span>)res=(res+a)%c</span><br><span class="line">		a=(a+a)%c;</span><br><span class="line">		b&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-  </div>
-  <!--文末结束语-->
-  
-    <div style="text-align:center;color: #ccc;font-size:24px;"> --- 本文结束 <i class="iconfont icon-heartbeat" style="font-size:24px;"></i> The End --- </div>
-  
-  <!--页脚广告-->
-  
-  <div class="mdui-divider"></div>
-  
-  <nav>
-    
-      <a rel="prev" class="post-nav-item mdui-float-left" href="/2020/08/12/%E9%A2%9C%E8%89%B2RGB%E5%8F%82%E7%85%A7%E8%A1%A8/">
-        <i class="iconfont icon-angle-left"></i>
-        <span>颜色RGB参照表</span>
-      </a>
-    
-    
-      <a rel="next" class="post-nav-item mdui-float-right" href="/2020/08/12/OJ(Online%20Judge)%E7%9A%84%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%81/">
-        <span>OJ(Online Judge)的常见错误代码</span>
-        <i class="iconfont icon-angle-right"></i>
-      </a>
-    
-  </nav>
-</article>
-
-
-
-
-  <div class="toc-button"  style="z-index: 100;">
-    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
-    <ul class="mdui-menu" id="toc">
-      <li class="mdui-menu-item">
-        <a href="/2020/08/12/%E4%BA%8C%E5%88%86%E6%B3%95%E6%B1%82%E8%A7%A3/" id="toc-header" class="mdui-ripple">文章目录</a>
+    <div class="mdui-card mdui-p-b-2 mdui-m-b-5">
+    <div class="post-header"> 
+        <a class="post-header-title" href="/tools/index.html">Tools</a>
+    </div>
+    <div id="page-card" class="mdui-card-content mdui-p-x-4">
         
-      </li>
-    </ul>
-  </div>
+            
+            
+            
+            <p><a target="_blank" rel="noopener" href="https://brokenpoems.cf/2048">2048</a><br><a target="_blank" rel="noopener" href="https://brokenpoems.cf/hextris">Hextris</a><br><a target="_blank" rel="noopener" href="https://brokenpoems.cf/mikutap">Mikutap</a><br><a target="_blank" rel="noopener" href="https://brokenpoems.cf/unlockmusic">音乐解锁</a><br><a target="_blank" rel="noopener" href="https://brokenpoems.cf/adarkroom/?lang=zh_cn">A Dark Room</a><br><a target="_blank" rel="noopener" href="https://brokenpoems.cf/learnGitBranching">learnGitBranching</a><br><a target="_blank" rel="noopener" href="https://brokenpoems.cf/9007199254740992">9007199254740992</a></p>
 
-
-
+            
+        </div>
+    </div>
+    
     <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
       <div class="mdui-tab" mdui-tab>
         
@@ -374,6 +274,8 @@
         </div>
       
     </div>
+
+
 
   </main>
   <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
@@ -421,12 +323,6 @@
 
 
 
-
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({
-        startOnLoad: true,
-        theme: "default"
-    });</script>
 
 
 
