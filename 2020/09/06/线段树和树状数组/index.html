@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+    
+        <link rel="shortcut icon" href="https://www.gravatar.com/avatar/3786?s=256&amp;d=identicon">
+        
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+    
+    
+    <title>
+        
+            线段树和树状数组 | Nothing...
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Nothing..." type="application/atom+xml">
+</head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-blue">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">Nothing...</a>
+    <a href="/" class="header-subtitle mdui-typo-headline">Nothing</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-2">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">主页</div>
+                </a>
+            
+                
+                <a href="/tags/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-bookmark"></i>
+                    </div>
+                    <div class="mdui-list-item-content">标签</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">分类</div>
+                </a>
+            
+                
+                <a href="/archives/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-archive"></i>
+                    </div>
+                    <div class="mdui-list-item-content">归档</div>
+                </a>
+            
+                
+                <a href="/tools/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-tools"></i>
+                    </div>
+                    <div class="mdui-list-item-content">工具箱</div>
+                </a>
+            
+                
+                <a href="/about/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-user"></i>
+                    </div>
+                    <div class="mdui-list-item-content">关于</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">夜间模式</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-2">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="https://gitee.com/brokenpoems/picture/raw/master/logo.png"/>
+                
+            </div>
+            <div class="sidebar-author-name">brokenpoems</div>
+            <div class="sidebar-description">None。。。</div>
+        </div>
+        <div class="sidebar-links">
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
+                    <a href="/brokenpoems@foxmail.com" class="mdui-chip-title">E-Mail</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                    <a target="_blank" rel="noopener" href="https://github.com/brokenpoems" class="mdui-chip-title">GitHub</a>
+                </div>
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">友情链接</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://garybear.cn/hexo-theme-meadow/" class="mdui-list-item mdui-ripple">
+                            Meadow说明文档
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://brokenpoems.cf" class="mdui-list-item mdui-ripple">
+                            Typecho Blog
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://rwby.cf" class="mdui-list-item mdui-ripple">
+                            Hello World
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/2020/09/06/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%92%8C%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/">线段树和树状数组</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2020-09-06
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2020-10-30
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/Something/">Something</a>
+    </span>
+    
+      <span>
+        <span class="iconfont icon-eye"></span>
+        阅读次数:&nbsp;
+        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+      </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=线段树和树状数组&url=http://crfv.cf/2020/09/06/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%92%8C%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/&pic=http://crfv.cf/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=线段树和树状数组&url=http://crfv.cf/2020/09/06/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%92%8C%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/&via=brokenpoems" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://crfv.cf/2020/09/06/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%92%8C%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=http://crfv.cf/2020/09/06/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%92%8C%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://crfv.cf/2020/09/06/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%92%8C%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/&title=线段树和树状数组" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=Nothing...&title=线段树和树状数组&summary=None。。。&pics=http://crfv.cf/null&url=http://crfv.cf/2020/09/06/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%92%8C%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=http://crfv.cf/2020/09/06/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%92%8C%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/&text=线段树和树状数组" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <!--markdown-->#线段树(Segment Tree)
+<p>baike?:线段树(Segment Tree)是一种<font color="Gold">二叉查找树</font>（，与<font color="Gold">区间树</font>相似，它将一个区间划分成一些单元区间，每个单元区间对应线段树中的一个叶结点。<br>!:<font color="Gold">区间树</font>：区间树是在平衡树基础上进行扩展得到的支持以区间为元素的动态集合的操作，其中每个节点的关键值是区间的左端点。<br>!:<font color="Gold">二叉查找树</font>（Binary Search Tree），（又：二叉搜索树，二叉排序树）它或者是一棵空树，或者是具有下列性质的二叉树： 若它的左子树不空，则左子树上所有结点的值均小于它的根结点的值； 若它的右子树不空，则右子树上所有结点的值均大于它的根结点的值； 它的左、右子树也分别为二叉排序树。二叉搜索树作为一种经典的数据结构，它既有链表的快速插入与删除操作的特点，又有数组快速查找的优势；所以应用十分广泛，例如在文件系统和数据库系统一般会采用这种数据结构进行高效率的排序与检索操作。<br>首先，线段树比较难<br>其次，线段树很重要<br>最后，如果你是想来看有什么可以学的，就去其他博客看看吧。<font color="Azure">我只是一个菜鸟。。</font><br>这里以求一段区间的最大值来建立线段树。。<br>数据规模最大为v不超过int,区间不超过1e5</p>
+<ol>
+<li>线段树结构</li>
+</ol>
+<p>-&gt;一个数据结构的基础。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1e5</span>+<span class="number">10</span>,inf=<span class="number">0x7fffffff</span>;</span><br><span class="line"><span class="keyword">int</span> value[maxn];</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> U,<span class="keyword">typename</span> T&gt;                         <span class="comment">//U是区间单位,T是节点值</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Segment_Tree_Node</span> &#123;</span></span><br><span class="line">        U l,r;                                             <span class="comment">//l:左起始点,r:右终点</span></span><br><span class="line">        T v;                                               <span class="comment">//v:当前节点的值</span></span><br><span class="line">        <span class="comment">//T lazy_tag;                                      //懒标记底下写</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> U,<span class="keyword">typename</span> T&gt;                         <span class="comment">//U是区间单位,T是节点值</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Segment_Tree</span> &#123;</span></span><br><span class="line">        <span class="function"><span class="keyword">inline</span> T <span class="title">Max</span><span class="params">(T a,T b)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> (a&gt;b)?a:b;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Chan</span><span class="params">(T&amp; a,T need)</span> </span>&#123;</span><br><span class="line">                a=need;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">typedef</span> Segment_Tree_Node&lt;U,T&gt; Node;               <span class="comment">//节点类型</span></span><br><span class="line">        <span class="function"><span class="keyword">typedef</span> <span class="title">T</span> <span class="params">(*fa_son)</span><span class="params">(T,T)</span></span>;                          <span class="comment">//父子关系函数</span></span><br><span class="line">        <span class="function"><span class="keyword">typedef</span> <span class="title">void</span> <span class="params">(*CoF)</span><span class="params">(T&amp;,T)</span></span>;                         <span class="comment">//Change_one_function 单点修改函数</span></span><br><span class="line">        Node tree[<span class="number">4</span>*maxn];                                 <span class="comment">//未优化要开O(4*n),原因:自己画一颗</span></span><br><span class="line">        <span class="comment">//Node tree[2*maxn];                               //可用深搜优化空间复杂度至O(2*n)</span></span><br><span class="line">        <span class="function"><span class="keyword">inline</span> T&amp; <span class="title">L</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> tree[id].l;                         <span class="comment">//返回左区间</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">inline</span> T&amp; <span class="title">R</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> tree[id].r;                         <span class="comment">//返回右区间</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">inline</span> T&amp; <span class="title">V</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> tree[id].v;                         <span class="comment">//返回当前节点值</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Lson</span><span class="params">(<span class="keyword">int</span> id)</span><span class="keyword">const</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> id&lt;&lt;<span class="number">1</span>;                              <span class="comment">//左儿子编号</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Rson</span><span class="params">(<span class="keyword">int</span> id)</span><span class="keyword">const</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> id&lt;&lt;<span class="number">1</span>|<span class="number">1</span>;                            <span class="comment">//右儿子编号</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Mid</span><span class="params">(<span class="keyword">int</span> id)</span><span class="keyword">const</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> (L(id)+R(id))&gt;&gt;<span class="number">1</span>;                   <span class="comment">//中间区间编号</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span>,U,U,fa_son fn=Max)</span></span>;                 <span class="comment">//建立线段树</span></span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span>,U,U)</span></span>;                                 <span class="comment">//单点查询</span></span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">change_one</span><span class="params">(<span class="keyword">int</span>,<span class="keyword">int</span>,T,CoF=Chan,fa_son=Max)</span></span>;    <span class="comment">//单点修改</span></span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">change</span><span class="params">(<span class="keyword">int</span>,<span class="keyword">int</span>,<span class="keyword">int</span>,T,CoF=Chan,fa_son=Max)</span></span>;    <span class="comment">//区间修改</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>建立线段树<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> U,<span class="keyword">typename</span> T&gt;                         <span class="comment">//U是区间单位,T是节点值</span></span><br><span class="line"><span class="keyword">void</span> Segment_Tree&lt;U,T&gt;::build(<span class="keyword">int</span> id,U l,U r,fa_son) &#123;</span><br><span class="line">        L(id)=l;</span><br><span class="line">        R(id)=r;</span><br><span class="line">        <span class="keyword">if</span>(l==r) &#123;</span><br><span class="line">                V(id)=value[id];</span><br><span class="line">                <span class="comment">//cin&gt;&gt;tree[id].v;                          //可以直接读入因为是叶子节点是一个一个遍历过去的</span></span><br><span class="line">        &#125;</span><br><span class="line">        build(Lson(id),L(id),Mid(id));                      <span class="comment">//左子树</span></span><br><span class="line">        build(Rson(id),Mid(id)+<span class="number">1</span>,R(id));                    <span class="comment">//右子树,因为左移一位后id的二进制末位为0所以位或1后相当于+1</span></span><br><span class="line">        V(id)=fn(V(Lson(id)),V(Rson(id)));                  <span class="comment">//父节点与子节点的关系</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>单点查询<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> U,<span class="keyword">typename</span> T&gt;					<span class="comment">//U是区间单位,T是节点值 </span></span><br><span class="line"><span class="keyword">int</span> Segment_Tree&lt;U,T&gt;::find(<span class="keyword">int</span> id,U x,U y)&#123;</span><br><span class="line">	<span class="keyword">int</span> re=<span class="number">0</span>; 									<span class="comment">//返回值 </span></span><br><span class="line">	<span class="keyword">if</span>(L(id)&gt;=x&amp;&amp;R(id)&lt;=y)<span class="keyword">return</span> V(id);			<span class="comment">//如果这个区间在目标区间里面,直接返回这个区间的值,返回时会加进去 </span></span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(R(id)&lt;x||L(id)&gt;y) <span class="keyword">return</span> ~inf+<span class="number">1</span>; 	<span class="comment">//如果这个区间和目标区间毫不相干,因为这里要求最大值,so返回-inf </span></span><br><span class="line">	<span class="keyword">if</span>(R(Lson(id))&gt;=x) re+=find(Lson(id),x,y); 	<span class="comment">//如果这个区间的左儿子和目标区间有交集,那么搜索左儿子,不用else </span></span><br><span class="line">	<span class="keyword">if</span>(L(Rson(id))&lt;=y) re+=find(Rson(id),x,y); 	<span class="comment">//如果这个区间的右儿子和目标区间又交集,那么搜索右儿子,不用else </span></span><br><span class="line">	<span class="keyword">return</span> re;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>单点修改<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> U,<span class="keyword">typename</span> T&gt;					<span class="comment">//U是区间单位,T是节点值 </span></span><br><span class="line"><span class="keyword">void</span> Segment_Tree&lt;U,T&gt;::change_one(<span class="keyword">int</span> id,<span class="keyword">int</span> pos,T chan,CoF fn1,fa_son fn2) &#123;</span><br><span class="line">	<span class="keyword">if</span>(L(id)==R(id))&#123;							<span class="comment">//如果是叶子节点，那么说明找到了</span></span><br><span class="line">		fn1(V(id),chan);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;					</span><br><span class="line">	<span class="keyword">if</span>(pos&lt;=R(Lson(id)))change_one(Lson(id),pos,fn1,fn2);<span class="comment">//在左区间还是右区间 </span></span><br><span class="line">	<span class="keyword">else</span> change_one(Rson(id),id,fn1,fn2);</span><br><span class="line">	V(id)=fn(V(Lson(id)),V(Rson(id)));			<span class="comment">//返回更新</span></span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+  </div>
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> --- 本文结束 <i class="iconfont icon-heartbeat" style="font-size:24px;"></i> The End --- </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/2020/10/04/%E5%9B%BE%E6%9F%93%E8%89%B2/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>图染色</span>
+      </a>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/2020/08/12/%E9%A2%9C%E8%89%B2RGB%E5%8F%82%E7%85%A7%E8%A1%A8/">
+        <span>颜色RGB参照表</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/2020/09/06/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%92%8C%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" id="toc-header" class="mdui-ripple">文章目录</a>
+        
+      </li>
+    </ul>
+  </div>
+
+
+
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+          <a href="#comment-tab1" class="mdui-ripple">livere</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: [''],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+        <div id="comment-tab1" class="mdui-p-a-2">
+          <div id="lv-container" data-id="city" data-uid="">
+  <script type="text/javascript">
+    (function (d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+      if (typeof LivereTower === 'function') { return; }
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript>Please enable JavaScript to view the comments powered by LiveRe.</noscript>
+</div>
+        </div>
+      
+    </div>
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+        <a href="https://beian.miit.gov.cn" rel="noopener" target="_blank"></a>
+      
+      <span>
+        &copy; 2015 - 2020 
+        
+          <span style="color:#d9333f" class="iconfont icon-heart"></span>
+        
+        brokenpoems
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span>Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span>Theme: <a href="https://github.com/kb1000fx/Meadow" rel="noopener" target="_blank">Meadow</a></span>
+        </div>
+      
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>总访客量 <span id="busuanzi_value_site_uv"></span></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>总访问量 <span id="busuanzi_value_site_pv"></span></span>
+        </div>
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"left","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+</html >

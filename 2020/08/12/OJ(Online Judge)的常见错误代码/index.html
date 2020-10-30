@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+    
+        <link rel="shortcut icon" href="https://www.gravatar.com/avatar/26012?s=256&amp;d=identicon">
+        
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+    
+    
+    <title>
+        
+            OJ(Online Judge)的常见错误代码 | Nothing...
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Nothing..." type="application/atom+xml">
+</head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-blue">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">Nothing...</a>
+    <a href="/" class="header-subtitle mdui-typo-headline">Nothing</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-2">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">主页</div>
+                </a>
+            
+                
+                <a href="/tags/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-bookmark"></i>
+                    </div>
+                    <div class="mdui-list-item-content">标签</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">分类</div>
+                </a>
+            
+                
+                <a href="/archives/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-archive"></i>
+                    </div>
+                    <div class="mdui-list-item-content">归档</div>
+                </a>
+            
+                
+                <a href="/tools/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-tools"></i>
+                    </div>
+                    <div class="mdui-list-item-content">工具箱</div>
+                </a>
+            
+                
+                <a href="/about/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-user"></i>
+                    </div>
+                    <div class="mdui-list-item-content">关于</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">夜间模式</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-2">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="https://gitee.com/brokenpoems/picture/raw/master/logo.png"/>
+                
+            </div>
+            <div class="sidebar-author-name">brokenpoems</div>
+            <div class="sidebar-description">None。。。</div>
+        </div>
+        <div class="sidebar-links">
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
+                    <a href="/brokenpoems@foxmail.com" class="mdui-chip-title">E-Mail</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                    <a target="_blank" rel="noopener" href="https://github.com/brokenpoems" class="mdui-chip-title">GitHub</a>
+                </div>
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">友情链接</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://garybear.cn/hexo-theme-meadow/" class="mdui-list-item mdui-ripple">
+                            Meadow说明文档
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://brokenpoems.cf" class="mdui-list-item mdui-ripple">
+                            Typecho Blog
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://rwby.cf" class="mdui-list-item mdui-ripple">
+                            Hello World
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/2020/08/12/OJ(Online%20Judge)%E7%9A%84%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%81/">OJ(Online Judge)的常见错误代码</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2020-08-12
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2020-10-30
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/OI/">OI</a>
+    </span>
+    
+      <span>
+        <span class="iconfont icon-eye"></span>
+        阅读次数:&nbsp;
+        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+      </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=OJ(Online Judge)的常见错误代码&url=http://crfv.cf/2020/08/12/OJ(Online%20Judge)%E7%9A%84%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%81/&pic=http://crfv.cf/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=OJ(Online Judge)的常见错误代码&url=http://crfv.cf/2020/08/12/OJ(Online%20Judge)%E7%9A%84%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%81/&via=brokenpoems" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://crfv.cf/2020/08/12/OJ(Online%20Judge)%E7%9A%84%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%81/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=http://crfv.cf/2020/08/12/OJ(Online%20Judge)%E7%9A%84%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%81/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://crfv.cf/2020/08/12/OJ(Online%20Judge)%E7%9A%84%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%81/&title=OJ(Online Judge)的常见错误代码" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=Nothing...&title=OJ(Online Judge)的常见错误代码&summary=None。。。&pics=http://crfv.cf/null&url=http://crfv.cf/2020/08/12/OJ(Online%20Judge)%E7%9A%84%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%81/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=http://crfv.cf/2020/08/12/OJ(Online%20Judge)%E7%9A%84%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%81/&text=OJ(Online Judge)的常见错误代码" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/OJ/ >OJ</a>
+      </i>
+    
+  </div>
+
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <!--markdown-->#OJ(Online Judge)的常见错误代码
+<table>
+<thead>
+<tr>
+<th align="center">简写</th>
+<th align="center">英文原意</th>
+<th align="center">中文翻译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">OJ</td>
+<td align="center">Online Judge</td>
+<td align="center">在线评测系统</td>
+</tr>
+<tr>
+<td align="center">CE</td>
+<td align="center">Compile Error</td>
+<td align="center">编译错误</td>
+</tr>
+<tr>
+<td align="center">Judging</td>
+<td align="center">Judging…</td>
+<td align="center">评测中</td>
+</tr>
+<tr>
+<td align="center">RE</td>
+<td align="center">Runtime Error</td>
+<td align="center">运行时错误</td>
+</tr>
+<tr>
+<td align="center">TLE</td>
+<td align="center">Time Limit Exceeded</td>
+<td align="center">超出时间限制</td>
+</tr>
+<tr>
+<td align="center">MLE</td>
+<td align="center">Memory Limit Exceeded</td>
+<td align="center">超出内存限制</td>
+</tr>
+<tr>
+<td align="center">ILE</td>
+<td align="center">Idleness Limit Exceeded</td>
+<td align="center">超出懒惰限制=。=</td>
+</tr>
+<tr>
+<td align="center">OLE</td>
+<td align="center">Output Limit Exceeded</td>
+<td align="center">超出输出限制</td>
+</tr>
+<tr>
+<td align="center">UKE</td>
+<td align="center">Unknown Error</td>
+<td align="center">未知错误</td>
+</tr>
+<tr>
+<td align="center">WA</td>
+<td align="center">Wrong Answer</td>
+<td align="center">答案错误</td>
+</tr>
+<tr>
+<td align="center">PC</td>
+<td align="center">Partially Correct</td>
+<td align="center">部分正确</td>
+</tr>
+<tr>
+<td align="center">AC</td>
+<td align="center">Accepted</td>
+<td align="center">答案正确</td>
+</tr>
+<tr>
+<td align="center">PE</td>
+<td align="center">Presentation Error</td>
+<td align="center">输出格式错误</td>
+</tr>
+<tr>
+<td align="center">DoJ</td>
+<td align="center">Denial of Judge</td>
+<td align="center">拒绝评测</td>
+</tr>
+<tr>
+<td align="center">SJE</td>
+<td align="center">Special Judg Error</td>
+<td align="center">特判错误</td>
+</tr>
+<tr>
+<td align="center">Au</td>
+<td align="center">Aurum</td>
+<td align="center">金的！</td>
+</tr>
+<tr>
+<td align="center">Ag</td>
+<td align="center">Argentum</td>
+<td align="center">银的!</td>
+</tr>
+<tr>
+<td align="center">Cu</td>
+<td align="center">Cuprum</td>
+<td align="center">铜的!</td>
+</tr>
+<tr>
+<td align="center">JF</td>
+<td align="center">查了一中午不查了=。=</td>
+<td align="center">=。=</td>
+</tr>
+<tr>
+<td align="center">RF</td>
+<td align="center">Restricted Function</td>
+<td align="center">使用了不安全的函数</td>
+</tr>
+<tr>
+<td align="center">SE</td>
+<td align="center">System Error</td>
+<td align="center">系统错误</td>
+</tr>
+<tr>
+<td align="center"><img src="https://brokenpoems.cf/usr/uploads/2020/08/2185073623.jpg" alt="OJ.jpg"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">参考链接:</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">1.<a target="_blank" rel="noopener" href="https://brokenpoems.cf/index.php/go/012/" title="洛谷---各个评测状态">洛谷—各个评测状态</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">2.<a target="_blank" rel="noopener" href="https://brokenpoems.cf/index.php/go/011/" title="关于在OJ中常见的错误">关于在OJ中常见的错误</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">3.<a target="_blank" rel="noopener" href="https://brokenpoems.cf/index.php/go/010/" title="OJ术语: AC、WA、TLE、OLE、MLE、RE、PE、CE">OJ术语: AC、WA、TLE、OLE、MLE、RE、PE、CE</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">4.<a target="_blank" rel="noopener" href="https://brokenpoems.cf/index.php/go/003/" title="OJ（Online Judge）常见错误提示">OJ（Online Judge）常见错误提示</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">5.<a target="_blank" rel="noopener" href="https://brokenpoems.cf/index.php/go/002/" title="UKE_百度百科">UKE_百度百科</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+
+  </div>
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> --- 本文结束 <i class="iconfont icon-heartbeat" style="font-size:24px;"></i> The End --- </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/2020/08/12/%E4%BA%8C%E5%88%86%E6%B3%95%E6%B1%82%E8%A7%A3/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>二分法求解</span>
+      </a>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/2020/07/22/%E5%8E%9F%E7%A0%81,%E8%A1%A5%E7%A0%81&%E5%8F%8D%E7%A0%81/">
+        <span>原码,补码&反码</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/2020/08/12/OJ(Online%20Judge)%E7%9A%84%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%81/" id="toc-header" class="mdui-ripple">文章目录</a>
+        
+      </li>
+    </ul>
+  </div>
+
+
+
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+          <a href="#comment-tab1" class="mdui-ripple">livere</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: [''],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+        <div id="comment-tab1" class="mdui-p-a-2">
+          <div id="lv-container" data-id="city" data-uid="">
+  <script type="text/javascript">
+    (function (d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+      if (typeof LivereTower === 'function') { return; }
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript>Please enable JavaScript to view the comments powered by LiveRe.</noscript>
+</div>
+        </div>
+      
+    </div>
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+        <a href="https://beian.miit.gov.cn" rel="noopener" target="_blank"></a>
+      
+      <span>
+        &copy; 2015 - 2020 
+        
+          <span style="color:#d9333f" class="iconfont icon-heart"></span>
+        
+        brokenpoems
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span>Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span>Theme: <a href="https://github.com/kb1000fx/Meadow" rel="noopener" target="_blank">Meadow</a></span>
+        </div>
+      
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>总访客量 <span id="busuanzi_value_site_uv"></span></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>总访问量 <span id="busuanzi_value_site_pv"></span></span>
+        </div>
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"left","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+</html >

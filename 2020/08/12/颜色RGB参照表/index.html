@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+    
+        <link rel="shortcut icon" href="https://www.gravatar.com/avatar/1291?s=256&amp;d=identicon">
+        
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+    
+    
+    <title>
+        
+            颜色RGB参照表 | Nothing...
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Nothing..." type="application/atom+xml">
+</head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-blue">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">Nothing...</a>
+    <a href="/" class="header-subtitle mdui-typo-headline">Nothing</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-2">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">主页</div>
+                </a>
+            
+                
+                <a href="/tags/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-bookmark"></i>
+                    </div>
+                    <div class="mdui-list-item-content">标签</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">分类</div>
+                </a>
+            
+                
+                <a href="/archives/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-archive"></i>
+                    </div>
+                    <div class="mdui-list-item-content">归档</div>
+                </a>
+            
+                
+                <a href="/tools/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-tools"></i>
+                    </div>
+                    <div class="mdui-list-item-content">工具箱</div>
+                </a>
+            
+                
+                <a href="/about/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-user"></i>
+                    </div>
+                    <div class="mdui-list-item-content">关于</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">夜间模式</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-2">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="https://gitee.com/brokenpoems/picture/raw/master/logo.png"/>
+                
+            </div>
+            <div class="sidebar-author-name">brokenpoems</div>
+            <div class="sidebar-description">None。。。</div>
+        </div>
+        <div class="sidebar-links">
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
+                    <a href="/brokenpoems@foxmail.com" class="mdui-chip-title">E-Mail</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                    <a target="_blank" rel="noopener" href="https://github.com/brokenpoems" class="mdui-chip-title">GitHub</a>
+                </div>
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">友情链接</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://garybear.cn/hexo-theme-meadow/" class="mdui-list-item mdui-ripple">
+                            Meadow说明文档
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://brokenpoems.cf" class="mdui-list-item mdui-ripple">
+                            Typecho Blog
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://rwby.cf" class="mdui-list-item mdui-ripple">
+                            Hello World
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/2020/08/12/%E9%A2%9C%E8%89%B2RGB%E5%8F%82%E7%85%A7%E8%A1%A8/">颜色RGB参照表</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2020-08-12
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2020-10-30
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/Something/">Something</a>
+    </span>
+    
+      <span>
+        <span class="iconfont icon-eye"></span>
+        阅读次数:&nbsp;
+        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+      </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=颜色RGB参照表&url=http://crfv.cf/2020/08/12/%E9%A2%9C%E8%89%B2RGB%E5%8F%82%E7%85%A7%E8%A1%A8/&pic=http://crfv.cf/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=颜色RGB参照表&url=http://crfv.cf/2020/08/12/%E9%A2%9C%E8%89%B2RGB%E5%8F%82%E7%85%A7%E8%A1%A8/&via=brokenpoems" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://crfv.cf/2020/08/12/%E9%A2%9C%E8%89%B2RGB%E5%8F%82%E7%85%A7%E8%A1%A8/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=http://crfv.cf/2020/08/12/%E9%A2%9C%E8%89%B2RGB%E5%8F%82%E7%85%A7%E8%A1%A8/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://crfv.cf/2020/08/12/%E9%A2%9C%E8%89%B2RGB%E5%8F%82%E7%85%A7%E8%A1%A8/&title=颜色RGB参照表" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=Nothing...&title=颜色RGB参照表&summary=None。。。&pics=http://crfv.cf/null&url=http://crfv.cf/2020/08/12/%E9%A2%9C%E8%89%B2RGB%E5%8F%82%E7%85%A7%E8%A1%A8/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=http://crfv.cf/2020/08/12/%E9%A2%9C%E8%89%B2RGB%E5%8F%82%E7%85%A7%E8%A1%A8/&text=颜色RGB参照表" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <!--markdown--><table class="reference notranslate"><tbody><tr><th align="left" width="25%">颜色名</th><th align="left" width="15%">HEX</th><th align="left" width="43%">Color</th></tr><tr><td align="left"><b>AliceBlue</b>&nbsp;</td><td align="left"><b>#F0F8FF</b></td><td bgcolor="#F0F8FF">&nbsp;</td></tr><tr><td align="left"><b>AntiqueWhite</b>&nbsp;</td><td align="left"><b>#FAEBD7</b></td><td bgcolor="#FAEBD7">&nbsp;</td></tr><tr><td align="left"><b>Aqua</b>&nbsp;</td><td align="left"><b>#00FFFF</b></td><td bgcolor="#00FFFF">&nbsp;</td></tr><tr><td align="left"><b>Aquamarine</b>&nbsp;</td><td align="left"><b>#7FFFD4</b></td><td bgcolor="#7FFFD4">&nbsp;</td></tr><tr><td align="left"><b>Azure</b>&nbsp;</td><td align="left"><b>#F0FFFF</b></td><td bgcolor="#F0FFFF">&nbsp;</td></tr><tr><td align="left"><b>Beige</b>&nbsp;</td><td align="left"><b>#F5F5DC</b></td><td bgcolor="#F5F5DC">&nbsp;</td></tr><tr><td align="left"><b>Bisque</b>&nbsp;</td><td align="left"><b>#FFE4C4</b></td><td bgcolor="#FFE4C4">&nbsp;</td></tr><tr><td align="left"><b>Black</b>&nbsp;</td><td align="left"><b>#000000</b></td><td bgcolor="#000000">&nbsp;</td></tr><tr><td align="left"><b>BlanchedAlmond</b>&nbsp;</td><td align="left"><b>#FFEBCD</b></td><td bgcolor="#FFEBCD">&nbsp;</td></tr><tr><td align="left"><b>Blue</b>&nbsp;</td><td align="left"><b>#0000FF</b></td><td bgcolor="#0000FF">&nbsp;</td></tr><tr><td align="left"><b>BlueViolet</b>&nbsp;</td><td align="left"><b>#8A2BE2</b></td><td bgcolor="#8A2BE2">&nbsp;</td></tr><tr><td align="left"><b>Brown</b>&nbsp;</td><td align="left"><b>#A52A2A</b></td><td bgcolor="#A52A2A">&nbsp;</td></tr><tr><td align="left"><b>BurlyWood</b>&nbsp;</td><td align="left"><b>#DEB887</b></td><td bgcolor="#DEB887">&nbsp;</td></tr><tr><td align="left"><b>CadetBlue</b>&nbsp;</td><td align="left"><b>#5F9EA0</b></td><td bgcolor="#5F9EA0">&nbsp;</td></tr><tr><td align="left"><b>Chartreuse</b>&nbsp;</td><td align="left"><b>#7FFF00</b></td><td bgcolor="#7FFF00">&nbsp;</td></tr><tr><td align="left"><b>Chocolate</b>&nbsp;</td><td align="left"><b>#D2691E</b></td><td bgcolor="#D2691E">&nbsp;</td></tr><tr><td align="left"><b>Coral</b>&nbsp;</td><td align="left"><b>#FF7F50</b></td><td bgcolor="#FF7F50">&nbsp;</td></tr><tr><td align="left"><b>CornflowerBlue</b>&nbsp;</td><td align="left"><b>#6495ED</b></td><td bgcolor="#6495ED">&nbsp;</td></tr><tr><td align="left"><b>Cornsilk</b>&nbsp;</td><td align="left"><b>#FFF8DC</b></td><td bgcolor="#FFF8DC">&nbsp;</td></tr><tr><td align="left"><b>Crimson</b>&nbsp;</td><td align="left"><b>#DC143C</b></td><td bgcolor="#DC143C">&nbsp;</td></tr><tr><td align="left"><b>Cyan</b>&nbsp;</td><td align="left"><b>#00FFFF</b></td><td bgcolor="#00FFFF">&nbsp;</td></tr><tr><td align="left"><b>DarkBlue</b>&nbsp;</td><td align="left"><b>#00008B</b></td><td bgcolor="#00008B">&nbsp;</td></tr><tr><td align="left"><b>DarkCyan</b>&nbsp;</td><td align="left"><b>#008B8B</b></td><td bgcolor="#008B8B">&nbsp;</td></tr><tr><td align="left"><b>DarkGoldenRod</b>&nbsp;</td><td align="left"><b>#B8860B</b></td><td bgcolor="#B8860B">&nbsp;</td></tr><tr><td align="left"><b>DarkGray</b>&nbsp;</td><td align="left"><b>#A9A9A9</b></td><td bgcolor="#A9A9A9">&nbsp;</td></tr><tr><td align="left"><b>DarkGreen</b>&nbsp;</td><td align="left"><b>#006400</b></td><td bgcolor="#006400">&nbsp;</td></tr><tr><td align="left"><b>DarkKhaki</b>&nbsp;</td><td align="left"><b>#BDB76B</b></td><td bgcolor="#BDB76B">&nbsp;</td></tr><tr><td align="left"><b>DarkMagenta</b>&nbsp;</td><td align="left"><b>#8B008B</b></td><td bgcolor="#8B008B">&nbsp;</td></tr><tr><td align="left"><b>DarkOliveGreen</b>&nbsp;</td><td align="left"><b>#556B2F</b></td><td bgcolor="#556B2F">&nbsp;</td></tr><tr><td align="left"><b>DarkOrange</b>&nbsp;</td><td align="left"><b>#FF8C00</b></td><td bgcolor="#FF8C00">&nbsp;</td></tr><tr><td align="left"><b>DarkOrchid</b>&nbsp;</td><td align="left"><b>#9932CC</b></td><td bgcolor="#9932CC">&nbsp;</td></tr><tr><td align="left"><b>DarkRed</b>&nbsp;</td><td align="left"><b>#8B0000</b></td><td bgcolor="#8B0000">&nbsp;</td></tr><tr><td align="left"><b>DarkSalmon</b>&nbsp;</td><td align="left"><b>#E9967A</b></td><td bgcolor="#E9967A">&nbsp;</td></tr><tr><td align="left"><b>DarkSeaGreen</b>&nbsp;</td><td align="left"><b>#8FBC8F</b></td><td bgcolor="#8FBC8F">&nbsp;</td></tr><tr><td align="left"><b>DarkSlateBlue</b>&nbsp;</td><td align="left"><b>#483D8B</b></td><td bgcolor="#483D8B">&nbsp;</td></tr><tr><td align="left"><b>DarkSlateGray</b>&nbsp;</td><td align="left"><b>#2F4F4F</b></td><td bgcolor="#2F4F4F">&nbsp;</td></tr><tr><td align="left"><b>DarkTurquoise</b>&nbsp;</td><td align="left"><b>#00CED1</b></td><td bgcolor="#00CED1">&nbsp;</td></tr><tr><td align="left"><b>DarkViolet</b>&nbsp;</td><td align="left"><b>#9400D3</b></td><td bgcolor="#9400D3">&nbsp;</td></tr><tr><td align="left"><b>DeepPink</b>&nbsp;</td><td align="left"><b>#FF1493</b></td><td bgcolor="#FF1493">&nbsp;</td></tr><tr><td align="left"><b>DeepSkyBlue</b>&nbsp;</td><td align="left"><b>#00BFFF</b></td><td bgcolor="#00BFFF">&nbsp;</td></tr><tr><td align="left"><b>DimGray</b>&nbsp;</td><td align="left"><b>#696969</b></td><td bgcolor="#696969">&nbsp;</td></tr><tr><td align="left"><b>DodgerBlue</b>&nbsp;</td><td align="left"><b>#1E90FF</b></td><td bgcolor="#1E90FF">&nbsp;</td></tr><tr><td align="left"><b>FireBrick</b>&nbsp;</td><td align="left"><b>#B22222</b></td><td bgcolor="#B22222">&nbsp;</td></tr><tr><td align="left"><b>FloralWhite</b>&nbsp;</td><td align="left"><b>#FFFAF0</b></td><td bgcolor="#FFFAF0">&nbsp;</td></tr><tr><td align="left"><b>ForestGreen</b>&nbsp;</td><td align="left"><b>#228B22</b></td><td bgcolor="#228B22">&nbsp;</td></tr><tr><td align="left"><b>Fuchsia</b>&nbsp;</td><td align="left"><b>#FF00FF</b></td><td bgcolor="#FF00FF">&nbsp;</td></tr><tr><td align="left"><b>Gainsboro</b>&nbsp;</td><td align="left"><b>#DCDCDC</b></td><td bgcolor="#DCDCDC">&nbsp;</td></tr><tr><td align="left"><b>GhostWhite</b>&nbsp;</td><td align="left"><b>#F8F8FF</b></td><td bgcolor="#F8F8FF">&nbsp;</td></tr><tr><td align="left"><b>Gold</b>&nbsp;</td><td align="left"><b>#FFD700</b></td><td bgcolor="#FFD700">&nbsp;</td></tr><tr><td align="left"><b>GoldenRod</b>&nbsp;</td><td align="left"><b>#DAA520</b></td><td bgcolor="#DAA520">&nbsp;</td></tr><tr><td align="left"><b>Gray</b>&nbsp;</td><td align="left"><b>#808080</b></td><td bgcolor="#808080">&nbsp;</td></tr><tr><td align="left"><b>Green</b>&nbsp;</td><td align="left"><b>#008000</b></td><td bgcolor="#008000">&nbsp;</td></tr><tr><td align="left"><b>GreenYellow</b>&nbsp;</td><td align="left"><b>#ADFF2F</b></td><td bgcolor="#ADFF2F">&nbsp;</td></tr><tr><td align="left"><b>HoneyDew</b>&nbsp;</td><td align="left"><b>#F0FFF0</b></td><td bgcolor="#F0FFF0">&nbsp;</td></tr><tr><td align="left"><b>HotPink</b>&nbsp;</td><td align="left"><b>#FF69B4</b></td><td bgcolor="#FF69B4">&nbsp;</td></tr><tr><td align="left"><b>IndianRed </b>&nbsp;</td><td align="left"><b>#CD5C5C</b></td><td bgcolor="#CD5C5C">&nbsp;</td></tr><tr><td align="left"><b>Indigo  </b>&nbsp;</td><td align="left"><b>#4B0082</b></td><td bgcolor="#4B0082">&nbsp;</td></tr><tr><td align="left"><b>Ivory</b>&nbsp;</td><td align="left"><b>#FFFFF0</b></td><td bgcolor="#FFFFF0">&nbsp;</td></tr><tr><td align="left"><b>Khaki</b>&nbsp;</td><td align="left"><b>#F0E68C</b></td><td bgcolor="#F0E68C">&nbsp;</td></tr><tr><td align="left"><b>Lavender</b>&nbsp;</td><td align="left"><b>#E6E6FA</b></td><td bgcolor="#E6E6FA">&nbsp;</td></tr><tr><td align="left"><b>LavenderBlush</b>&nbsp;</td><td align="left"><b>#FFF0F5</b></td><td bgcolor="#FFF0F5">&nbsp;</td></tr><tr><td align="left"><b>LawnGreen</b>&nbsp;</td><td align="left"><b>#7CFC00</b></td><td bgcolor="#7CFC00">&nbsp;</td></tr><tr><td align="left"><b>LemonChiffon</b>&nbsp;</td><td align="left"><b>#FFFACD</b></td><td bgcolor="#FFFACD">&nbsp;</td></tr><tr><td align="left"><b>LightBlue</b>&nbsp;</td><td align="left"><b>#ADD8E6</b></td><td bgcolor="#ADD8E6">&nbsp;</td></tr><tr><td align="left"><b>LightCoral</b>&nbsp;</td><td align="left"><b>#F08080</b></td><td bgcolor="#F08080">&nbsp;</td></tr><tr><td align="left"><b>LightCyan</b>&nbsp;</td><td align="left"><b>#E0FFFF</b></td><td bgcolor="#E0FFFF">&nbsp;</td></tr><tr><td align="left"><b>LightGoldenRodYellow</b>&nbsp;</td><td align="left"><b>#FAFAD2</b></td><td bgcolor="#FAFAD2">&nbsp;</td></tr><tr><td align="left"><b>LightGray</b>&nbsp;</td><td align="left"><b>#D3D3D3</b></td><td bgcolor="#D3D3D3">&nbsp;</td></tr><tr><td align="left"><b>LightGreen</b>&nbsp;</td><td align="left"><b>#90EE90</b></td><td bgcolor="#90EE90">&nbsp;</td></tr><tr><td align="left"><b>LightPink</b>&nbsp;</td><td align="left"><b>#FFB6C1</b></td><td bgcolor="#FFB6C1">&nbsp;</td></tr><tr><td align="left"><b>LightSalmon</b>&nbsp;</td><td align="left"><b>#FFA07A</b></td><td bgcolor="#FFA07A">&nbsp;</td></tr><tr><td align="left"><b>LightSeaGreen</b>&nbsp;</td><td align="left"><b>#20B2AA</b></td><td bgcolor="#20B2AA">&nbsp;</td></tr><tr><td align="left"><b>LightSkyBlue</b>&nbsp;</td><td align="left"><b>#87CEFA</b></td><td bgcolor="#87CEFA">&nbsp;</td></tr><tr><td align="left"><b>LightSlateGray</b>&nbsp;</td><td align="left"><b>#778899</b></td><td bgcolor="#778899">&nbsp;</td></tr><tr><td align="left"><b>LightSteelBlue</b>&nbsp;</td><td align="left"><b>#B0C4DE</b></td><td bgcolor="#B0C4DE">&nbsp;</td></tr><tr><td align="left"><b>LightYellow</b>&nbsp;</td><td align="left"><b>#FFFFE0</b></td><td bgcolor="#FFFFE0">&nbsp;</td></tr><tr><td align="left"><b>Lime</b>&nbsp;</td><td align="left"><b>#00FF00</b></td><td bgcolor="#00FF00">&nbsp;</td></tr><tr><td align="left"><b>LimeGreen</b>&nbsp;</td><td align="left"><b>#32CD32</b></td><td bgcolor="#32CD32">&nbsp;</td></tr><tr><td align="left"><b>Linen</b>&nbsp;</td><td align="left"><b>#FAF0E6</b></td><td bgcolor="#FAF0E6">&nbsp;</td></tr><tr><td align="left"><b>Magenta</b>&nbsp;</td><td align="left"><b>#FF00FF</b></td><td bgcolor="#FF00FF">&nbsp;</td></tr><tr><td align="left"><b>Maroon</b>&nbsp;</td><td align="left"><b>#800000</b></td><td bgcolor="#800000">&nbsp;</td></tr><tr><td align="left"><b>MediumAquaMarine</b>&nbsp;</td><td align="left"><b>#66CDAA</b></td><td bgcolor="#66CDAA">&nbsp;</td></tr><tr><td align="left"><b>MediumBlue</b>&nbsp;</td><td align="left"><b>#0000CD</b></td><td bgcolor="#0000CD">&nbsp;</td></tr><tr><td align="left"><b>MediumOrchid</b>&nbsp;</td><td align="left"><b>#BA55D3</b></td><td bgcolor="#BA55D3">&nbsp;</td></tr><tr><td align="left"><b>MediumPurple</b>&nbsp;</td><td align="left"><b>#9370DB</b></td><td bgcolor="#9370DB">&nbsp;</td></tr><tr><td align="left"><b>MediumSeaGreen</b>&nbsp;</td><td align="left"><b>#3CB371</b></td><td bgcolor="#3CB371">&nbsp;</td></tr><tr><td align="left"><b>MediumSlateBlue</b>&nbsp;</td><td align="left"><b>#7B68EE</b></td><td bgcolor="#7B68EE">&nbsp;</td></tr><tr><td align="left"><b>MediumSpringGreen</b>&nbsp;</td><td align="left"><b>#00FA9A</b></td><td bgcolor="#00FA9A">&nbsp;</td></tr><tr><td align="left"><b>MediumTurquoise</b>&nbsp;</td><td align="left"><b>#48D1CC</b></td><td bgcolor="#48D1CC">&nbsp;</td></tr><tr><td align="left"><b>MediumVioletRed</b>&nbsp;</td><td align="left"><b>#C71585</b></td><td bgcolor="#C71585">&nbsp;</td></tr><tr><td align="left"><b>MidnightBlue</b>&nbsp;</td><td align="left"><b>#191970</b></td><td bgcolor="#191970">&nbsp;</td></tr><tr><td align="left"><b>MintCream</b>&nbsp;</td><td align="left"><b>#F5FFFA</b></td><td bgcolor="#F5FFFA">&nbsp;</td></tr><tr><td align="left"><b>MistyRose</b>&nbsp;</td><td align="left"><b>#FFE4E1</b></td><td bgcolor="#FFE4E1">&nbsp;</td></tr><tr><td align="left"><b>Moccasin</b>&nbsp;</td><td align="left"><b>#FFE4B5</b></td><td bgcolor="#FFE4B5">&nbsp;</td></tr><tr><td align="left"><b>NavajoWhite</b>&nbsp;</td><td align="left"><b>#FFDEAD</b></td><td bgcolor="#FFDEAD">&nbsp;</td></tr><tr><td align="left"><b>Navy</b>&nbsp;</td><td align="left"><b>#000080</b></td><td bgcolor="#000080">&nbsp;</td></tr><tr><td align="left"><b>OldLace</b>&nbsp;</td><td align="left"><b>#FDF5E6</b></td><td bgcolor="#FDF5E6">&nbsp;</td></tr><tr><td align="left"><b>Olive</b>&nbsp;</td><td align="left"><b>#808000</b></td><td bgcolor="#808000">&nbsp;</td></tr><tr><td align="left"><b>OliveDrab</b>&nbsp;</td><td align="left"><b>#6B8E23</b></td><td bgcolor="#6B8E23">&nbsp;</td></tr><tr><td align="left"><b>Orange</b>&nbsp;</td><td align="left"><b>#FFA500</b></td><td bgcolor="#FFA500">&nbsp;</td></tr><tr><td align="left"><b>OrangeRed</b>&nbsp;</td><td align="left"><b>#FF4500</b></td><td bgcolor="#FF4500">&nbsp;</td></tr><tr><td align="left"><b>Orchid</b>&nbsp;</td><td align="left"><b>#DA70D6</b></td><td bgcolor="#DA70D6">&nbsp;</td></tr><tr><td align="left"><b>PaleGoldenRod</b>&nbsp;</td><td align="left"><b>#EEE8AA</b></td><td bgcolor="#EEE8AA">&nbsp;</td></tr><tr><td align="left"><b>PaleGreen</b>&nbsp;</td><td align="left"><b>#98FB98</b></td><td bgcolor="#98FB98">&nbsp;</td></tr><tr><td align="left"><b>PaleTurquoise</b>&nbsp;</td><td align="left"><b>#AFEEEE</b></td><td bgcolor="#AFEEEE">&nbsp;</td></tr><tr><td align="left"><b>PaleVioletRed</b>&nbsp;</td><td align="left"><b>#DB7093</b></td><td bgcolor="#DB7093">&nbsp;</td></tr><tr><td align="left"><b>PapayaWhip</b>&nbsp;</td><td align="left"><b>#FFEFD5</b></td><td bgcolor="#FFEFD5">&nbsp;</td></tr><tr><td align="left"><b>PeachPuff</b>&nbsp;</td><td align="left"><b>#FFDAB9</b></td><td bgcolor="#FFDAB9">&nbsp;</td></tr><tr><td align="left"><b>Peru</b>&nbsp;</td><td align="left"><b>#CD853F</b></td><td bgcolor="#CD853F">&nbsp;</td></tr><tr><td align="left"><b>Pink</b>&nbsp;</td><td align="left"><b>#FFC0CB</b></td><td bgcolor="#FFC0CB">&nbsp;</td></tr><tr><td align="left"><b>Plum</b>&nbsp;</td><td align="left"><b>#DDA0DD</b></td><td bgcolor="#DDA0DD">&nbsp;</td></tr><tr><td align="left"><b>PowderBlue</b>&nbsp;</td><td align="left"><b>#B0E0E6</b></td><td bgcolor="#B0E0E6">&nbsp;</td></tr><tr><td align="left"><b>Purple</b>&nbsp;</td><td align="left"><b>#800080</b></td><td bgcolor="#800080">&nbsp;</td></tr><tr><td align="left"><b>Red</b>&nbsp;</td><td align="left"><b>#FF0000</b></td><td bgcolor="#FF0000">&nbsp;</td></tr><tr><td align="left"><b>RosyBrown</b>&nbsp;</td><td align="left"><b>#BC8F8F</b></td><td bgcolor="#BC8F8F">&nbsp;</td></tr><tr><td align="left"><b>RoyalBlue</b>&nbsp;</td><td align="left"><b>#4169E1</b></td><td bgcolor="#4169E1">&nbsp;</td></tr><tr><td align="left"><b>SaddleBrown</b>&nbsp;</td><td align="left"><b>#8B4513</b></td><td bgcolor="#8B4513">&nbsp;</td></tr><tr><td align="left"><b>Salmon</b>&nbsp;</td><td align="left"><b>#FA8072</b></td><td bgcolor="#FA8072">&nbsp;</td></tr><tr><td align="left"><b>SandyBrown</b>&nbsp;</td><td align="left"><b>#F4A460</b></td><td bgcolor="#F4A460">&nbsp;</td></tr><tr><td align="left"><b>SeaGreen</b>&nbsp;</td><td align="left"><b>#2E8B57</b></td><td bgcolor="#2E8B57">&nbsp;</td></tr><tr><td align="left"><b>SeaShell</b>&nbsp;</td><td align="left"><b>#FFF5EE</b></td><td bgcolor="#FFF5EE">&nbsp;</td></tr><tr><td align="left"><b>Sienna</b>&nbsp;</td><td align="left"><b>#A0522D</b></td><td bgcolor="#A0522D">&nbsp;</td></tr><tr><td align="left"><b>Silver</b>&nbsp;</td><td align="left"><b>#C0C0C0</b></td><td bgcolor="#C0C0C0">&nbsp;</td></tr><tr><td align="left"><b>SkyBlue</b>&nbsp;</td><td align="left"><b>#87CEEB</b></td><td bgcolor="#87CEEB">&nbsp;</td></tr><tr><td align="left"><b>SlateBlue</b>&nbsp;</td><td align="left"><b>#6A5ACD</b></td><td bgcolor="#6A5ACD">&nbsp;</td></tr><tr><td align="left"><b>SlateGray</b>&nbsp;</td><td align="left"><b>#708090</b></td><td bgcolor="#708090">&nbsp;</td></tr><tr><td align="left"><b>Snow</b>&nbsp;</td><td align="left"><b>#FFFAFA</b></td><td bgcolor="#FFFAFA">&nbsp;</td></tr><tr><td align="left"><b>SpringGreen</b>&nbsp;</td><td align="left"><b>#00FF7F</b></td><td bgcolor="#00FF7F">&nbsp;</td></tr><tr><td align="left"><b>SteelBlue</b>&nbsp;</td><td align="left"><b>#4682B4</b></td><td bgcolor="#4682B4">&nbsp;</td></tr><tr><td align="left"><b>Tan</b>&nbsp;</td><td align="left"><b>#D2B48C</b></td><td bgcolor="#D2B48C">&nbsp;</td></tr><tr><td align="left"><b>Teal</b>&nbsp;</td><td align="left"><b>#008080</b></td><td bgcolor="#008080">&nbsp;</td></tr><tr><td align="left"><b>Thistle</b>&nbsp;</td><td align="left"><b>#D8BFD8</b></td><td bgcolor="#D8BFD8">&nbsp;</td></tr><tr><td align="left"><b>Tomato</b>&nbsp;</td><td align="left"><b>#FF6347</b></td><td bgcolor="#FF6347">&nbsp;</td></tr><tr><td align="left"><b>Turquoise</b>&nbsp;</td><td align="left"><b>#40E0D0</b></td><td bgcolor="#40E0D0">&nbsp;</td></tr><tr><td align="left"><b>Violet</b>&nbsp;</td><td align="left"><b>#EE82EE</b></td><td bgcolor="#EE82EE">&nbsp;</td></tr><tr><td align="left"><b>Wheat</b>&nbsp;</td><td align="left"><b>#F5DEB3</b></td><td bgcolor="#F5DEB3">&nbsp;</td></tr><tr><td align="left"><b>White</b>&nbsp;</td><td align="left"><b>#FFFFFF</b></td><td bgcolor="#FFFFFF">&nbsp;</td></tr><tr><td align="left"><b>WhiteSmoke</b>&nbsp;</td><td align="left"><b>#F5F5F5</b></td><td bgcolor="#F5F5F5">&nbsp;</td></tr><tr><td align="left"><b>Yellow</b>&nbsp;</td><td align="left"><b>#FFFF00</b></td><td bgcolor="#FFFF00">&nbsp;</td></tr><tr><td align="left"><b>YellowGreen</b>&nbsp;</td><td align="left"><b>#9ACD32</b></td><td bgcolor="#9ACD32">&nbsp;</td></tr></tbody></table>
+<p>参考<br>1.<a target="_blank" rel="noopener" href="https://brokenpoems.cf/index.php/go/019/">HTML 颜色名</a></p>
+
+  </div>
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> --- 本文结束 <i class="iconfont icon-heartbeat" style="font-size:24px;"></i> The End --- </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/2020/09/06/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%92%8C%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>线段树和树状数组</span>
+      </a>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/2020/08/12/%E4%BA%8C%E5%88%86%E6%B3%95%E6%B1%82%E8%A7%A3/">
+        <span>二分法求解</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/2020/08/12/%E9%A2%9C%E8%89%B2RGB%E5%8F%82%E7%85%A7%E8%A1%A8/" id="toc-header" class="mdui-ripple">文章目录</a>
+        
+      </li>
+    </ul>
+  </div>
+
+
+
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+          <a href="#comment-tab1" class="mdui-ripple">livere</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: [''],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+        <div id="comment-tab1" class="mdui-p-a-2">
+          <div id="lv-container" data-id="city" data-uid="">
+  <script type="text/javascript">
+    (function (d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+      if (typeof LivereTower === 'function') { return; }
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript>Please enable JavaScript to view the comments powered by LiveRe.</noscript>
+</div>
+        </div>
+      
+    </div>
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+        <a href="https://beian.miit.gov.cn" rel="noopener" target="_blank"></a>
+      
+      <span>
+        &copy; 2015 - 2020 
+        
+          <span style="color:#d9333f" class="iconfont icon-heart"></span>
+        
+        brokenpoems
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span>Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span>Theme: <a href="https://github.com/kb1000fx/Meadow" rel="noopener" target="_blank">Meadow</a></span>
+        </div>
+      
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>总访客量 <span id="busuanzi_value_site_uv"></span></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>总访问量 <span id="busuanzi_value_site_pv"></span></span>
+        </div>
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"left","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+</html >

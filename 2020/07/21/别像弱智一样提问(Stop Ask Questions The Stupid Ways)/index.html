@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+    
+        <link rel="shortcut icon" href="https://www.gravatar.com/avatar/8733?s=256&amp;d=identicon">
+        
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+    
+    
+    <title>
+        
+            别像弱智一样提问(Stop Ask Questions The Stupid Ways) | Nothing...
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Nothing..." type="application/atom+xml">
+</head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-blue">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">Nothing...</a>
+    <a href="/" class="header-subtitle mdui-typo-headline">Nothing</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-2">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">主页</div>
+                </a>
+            
+                
+                <a href="/tags/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-bookmark"></i>
+                    </div>
+                    <div class="mdui-list-item-content">标签</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">分类</div>
+                </a>
+            
+                
+                <a href="/archives/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-archive"></i>
+                    </div>
+                    <div class="mdui-list-item-content">归档</div>
+                </a>
+            
+                
+                <a href="/tools/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-tools"></i>
+                    </div>
+                    <div class="mdui-list-item-content">工具箱</div>
+                </a>
+            
+                
+                <a href="/about/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-user"></i>
+                    </div>
+                    <div class="mdui-list-item-content">关于</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">夜间模式</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-2">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="https://gitee.com/brokenpoems/picture/raw/master/logo.png"/>
+                
+            </div>
+            <div class="sidebar-author-name">brokenpoems</div>
+            <div class="sidebar-description">None。。。</div>
+        </div>
+        <div class="sidebar-links">
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
+                    <a href="/brokenpoems@foxmail.com" class="mdui-chip-title">E-Mail</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                    <a target="_blank" rel="noopener" href="https://github.com/brokenpoems" class="mdui-chip-title">GitHub</a>
+                </div>
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">友情链接</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://garybear.cn/hexo-theme-meadow/" class="mdui-list-item mdui-ripple">
+                            Meadow说明文档
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://brokenpoems.cf" class="mdui-list-item mdui-ripple">
+                            Typecho Blog
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://rwby.cf" class="mdui-list-item mdui-ripple">
+                            Hello World
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/2020/07/21/%E5%88%AB%E5%83%8F%E5%BC%B1%E6%99%BA%E4%B8%80%E6%A0%B7%E6%8F%90%E9%97%AE(Stop%20Ask%20Questions%20The%20Stupid%20Ways)/">别像弱智一样提问(Stop Ask Questions The Stupid Ways)</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2020-07-21
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2020-10-30
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/Something/">Something</a>
+    </span>
+    
+      <span>
+        <span class="iconfont icon-eye"></span>
+        阅读次数:&nbsp;
+        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+      </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=别像弱智一样提问(Stop Ask Questions The Stupid Ways)&url=http://crfv.cf/2020/07/21/%E5%88%AB%E5%83%8F%E5%BC%B1%E6%99%BA%E4%B8%80%E6%A0%B7%E6%8F%90%E9%97%AE(Stop%20Ask%20Questions%20The%20Stupid%20Ways)/&pic=http://crfv.cf/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=别像弱智一样提问(Stop Ask Questions The Stupid Ways)&url=http://crfv.cf/2020/07/21/%E5%88%AB%E5%83%8F%E5%BC%B1%E6%99%BA%E4%B8%80%E6%A0%B7%E6%8F%90%E9%97%AE(Stop%20Ask%20Questions%20The%20Stupid%20Ways)/&via=brokenpoems" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://crfv.cf/2020/07/21/%E5%88%AB%E5%83%8F%E5%BC%B1%E6%99%BA%E4%B8%80%E6%A0%B7%E6%8F%90%E9%97%AE(Stop%20Ask%20Questions%20The%20Stupid%20Ways)/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=http://crfv.cf/2020/07/21/%E5%88%AB%E5%83%8F%E5%BC%B1%E6%99%BA%E4%B8%80%E6%A0%B7%E6%8F%90%E9%97%AE(Stop%20Ask%20Questions%20The%20Stupid%20Ways)/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://crfv.cf/2020/07/21/%E5%88%AB%E5%83%8F%E5%BC%B1%E6%99%BA%E4%B8%80%E6%A0%B7%E6%8F%90%E9%97%AE(Stop%20Ask%20Questions%20The%20Stupid%20Ways)/&title=别像弱智一样提问(Stop Ask Questions The Stupid Ways)" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=Nothing...&title=别像弱智一样提问(Stop Ask Questions The Stupid Ways)&summary=None。。。&pics=http://crfv.cf/null&url=http://crfv.cf/2020/07/21/%E5%88%AB%E5%83%8F%E5%BC%B1%E6%99%BA%E4%B8%80%E6%A0%B7%E6%8F%90%E9%97%AE(Stop%20Ask%20Questions%20The%20Stupid%20Ways)/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=http://crfv.cf/2020/07/21/%E5%88%AB%E5%83%8F%E5%BC%B1%E6%99%BA%E4%B8%80%E6%A0%B7%E6%8F%90%E9%97%AE(Stop%20Ask%20Questions%20The%20Stupid%20Ways)/&text=别像弱智一样提问(Stop Ask Questions The Stupid Ways)" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/Reading/ >Reading</a>
+      </i>
+    
+  </div>
+
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <!--markdown--># 别像弱智一样提问
+
+<p>Stop Ask Questions The Stupid Ways</p>
+<h2 id="你真的准备好了吗？"><a href="#你真的准备好了吗？" class="headerlink" title="你真的准备好了吗？"></a>你真的准备好了吗？</h2><p><img src="https://brokenpoems.cf/usr/uploads/2020/07/1715435248.png" alt="you-are-not-prepared.png"></p>
+<blockquote>
+<p>感谢群友 <code>for you</code> 提供</p>
+</blockquote>
+<h2 id="提问前你必须需要知道的事情"><a href="#提问前你必须需要知道的事情" class="headerlink" title="提问前你必须需要知道的事情"></a>提问前你必须需要知道的事情</h2><ol>
+<li>要知道， <code>Free</code> 的正确翻译是 <code>自由</code>，而非 **<del><code>免费</code></del>**。</li>
+<li>要知道，愿意回答问题的人，都是 <strong>可爱</strong> 的人。</li>
+<li>要知道，向帮助你的人 <code>付费</code> 是一个高尚的行为。即使回答你的人不是为了钱。</li>
+<li>要知道，<code>花钱买时间一个是常识</code>。如果你不能认同，要么你钱包穷，要么你思想穷。</li>
+<li>要知道，给对方发工资的不是你或者你老板。</li>
+<li>要知道，提问的时候你才是 <strong>孙子</strong>，帮助你的人是 <strong>大爷</strong>。</li>
+<li>要知道，不回答你的问题对其他人没有任何损失。</li>
+<li>要知道，<code>准确描述一件事情</code>是一项基本生存技能。要学会 <a target="_blank" rel="noopener" href="https://brokenpoems.cf/index.php/archives/5/">《提问的智慧》</a></li>
+<li>要知道，<code>搜索</code>是一项基本生存技能，学不会用 Google 的话，你可能真的不适合你所从事的行业。</li>
+<li>要知道，<code>英文</code>是一项基本生存技能，不认识英文的话，你可能真的不适合你所从事的行业。</li>
+</ol>
+<h2 id="幼儿园的小朋友都知道要有礼貌"><a href="#幼儿园的小朋友都知道要有礼貌" class="headerlink" title="幼儿园的小朋友都知道要有礼貌"></a>幼儿园的小朋友都知道要有礼貌</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">请问</span><br><span class="line">  ...问题描述...</span><br><span class="line">谢谢</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://brokenpoems.cf/usr/uploads/2020/07/2132356464.jpg" alt="manners-maketh-man.jpg"></p>
+<h2 id="学会描述问题"><a href="#学会描述问题" class="headerlink" title="学会描述问题"></a>学会描述问题</h2><blockquote>
+<p>向别人提问的时候，要学会正确的描述问题。<br>把对方当成你的老板，你在给他提做报告。要用最精炼的文字和图片，向对方阐述明白一个事情的来龙去脉。</p>
+</blockquote>
+<blockquote>
+<p><strong>要知道，你不是我追的妹子，我没有时间来猜你想要什么。</strong></p>
+</blockquote>
+<blockquote>
+<p>记住，给别人的条件越多，你的问题解决越快。因为这不是解密游戏。</p>
+</blockquote>
+<ol>
+<li>请问一个关于 <code>什么</code> 的问题。</li>
+<li>我想要达到 <code>什么样</code> 效果，但是我这样做出现了 <code>什么样</code> 的问题。</li>
+<li>报错日志是 <code>这样</code> 的。（要 <code>学会</code> 画关键字）</li>
+<li>我尝试过 <code>什么</code> 方法来解决。</li>
+<li>我尝试搜索过了 <code>什么</code> 关键字，在里面找到了 <code>这些 URL</code> 的回答，尝试了还是没有解决问题。</li>
+<li>我用的是 <code>什么</code> 操作系统，版本号是多少。</li>
+<li>我用的是 <code>什么</code> 软件，版本号是多少。</li>
+<li>谢谢</li>
+</ol>
+<blockquote>
+<p>千万别认为只有别人帮助你之后才需要说 <code>谢谢</code>。</p>
+</blockquote>
+<h3 id="学会什么时候贴图"><a href="#学会什么时候贴图" class="headerlink" title="学会什么时候贴图"></a>学会什么时候贴图</h3><p><img src="https://brokenpoems.cf/usr/uploads/2020/07/1018762986.png" alt="what-time-to-use-image.png"></p>
+<p>像这种，IM 自动转义表情，贴出来的问题全是表情。</p>
+<h3 id="学会什么时候要圈出重点"><a href="#学会什么时候要圈出重点" class="headerlink" title="学会什么时候要圈出重点"></a>学会什么时候要圈出重点</h3><p>千万不要认为别人的频率和你是同步的，然后像这样扔出一张图一个表情就了事了。</p>
+<p>在工作中， 你<code>@</code>的人可能会多问一句什么情况。 但是在 IM 聊天群里面，就没有这么好运气了。</p>
+<p><img src="https://brokenpoems.cf/usr/uploads/2020/07/460509895.png" alt="stupid_02-conversation.png"></p>
+<p>如下很难吗？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@xxx，我这边访问不了 git 仓库。</span><br><span class="line">环境是: 环境是什么。</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://brokenpoems.cf/usr/uploads/2020/07/805641133.png" alt="stupid_02-no-target.png"></p>
+<h3 id="学会什么时候贴文字"><a href="#学会什么时候贴文字" class="headerlink" title="学会什么时候贴文字"></a>学会什么时候贴文字</h3><h2 id="什么是弱智一样的提问"><a href="#什么是弱智一样的提问" class="headerlink" title="什么是弱智一样的提问"></a>什么是弱智一样的提问</h2><p><img src="https://brokenpoems.cf/usr/uploads/2020/07/1461368315.png" alt="stupid_questions.png"></p>
+<h2 id="萌新滚粗"><a href="#萌新滚粗" class="headerlink" title="萌新滚粗"></a>萌新滚粗</h2><p><img src="https://brokenpoems.cf/usr/uploads/2020/07/1936073238.jpg" alt="baiduit.jpg"></p>
+<table>
+<thead>
+<tr>
+<th>什么鬼？</th>
+<th>咋回事？</th>
+<th>怎么办？</th>
+<th>救命啊！！</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>自己 google</td>
+<td>自己 google</td>
+<td>自己 google</td>
+<td>自己 google 了吗</td>
+</tr>
+</tbody></table>
+<p><img src="https://brokenpoems.cf/usr/uploads/2020/07/517507581.png" alt="googleit.png"><br>转载自GitHub:<a target="_blank" rel="noopener" href="https://brokenpoems.cf/index.php/go/004/">别像弱智一样提问</a></p>
+
+  </div>
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> --- 本文结束 <i class="iconfont icon-heartbeat" style="font-size:24px;"></i> The End --- </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/2020/07/21/About%20Me/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>About Me</span>
+      </a>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/2020/07/21/%E6%8F%90%E9%97%AE%E7%9A%84%E6%99%BA%E6%85%A7(How%20To%20Ask%20Questions%20The%20Smart%20Way)/">
+        <span>提问的智慧(How To Ask Questions The Smart Way)</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/2020/07/21/%E5%88%AB%E5%83%8F%E5%BC%B1%E6%99%BA%E4%B8%80%E6%A0%B7%E6%8F%90%E9%97%AE(Stop%20Ask%20Questions%20The%20Stupid%20Ways)/" id="toc-header" class="mdui-ripple">文章目录</a>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%A0%E7%9C%9F%E7%9A%84%E5%87%86%E5%A4%87%E5%A5%BD%E4%BA%86%E5%90%97%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">你真的准备好了吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E9%97%AE%E5%89%8D%E4%BD%A0%E5%BF%85%E9%A1%BB%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E4%BA%8B%E6%83%85"><span class="toc-number">2.</span> <span class="toc-text">提问前你必须需要知道的事情</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%BC%E5%84%BF%E5%9B%AD%E7%9A%84%E5%B0%8F%E6%9C%8B%E5%8F%8B%E9%83%BD%E7%9F%A5%E9%81%93%E8%A6%81%E6%9C%89%E7%A4%BC%E8%B2%8C"><span class="toc-number">3.</span> <span class="toc-text">幼儿园的小朋友都知道要有礼貌</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%A6%E4%BC%9A%E6%8F%8F%E8%BF%B0%E9%97%AE%E9%A2%98"><span class="toc-number">4.</span> <span class="toc-text">学会描述问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%A6%E4%BC%9A%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E8%B4%B4%E5%9B%BE"><span class="toc-number">4.1.</span> <span class="toc-text">学会什么时候贴图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%A6%E4%BC%9A%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E8%A6%81%E5%9C%88%E5%87%BA%E9%87%8D%E7%82%B9"><span class="toc-number">4.2.</span> <span class="toc-text">学会什么时候要圈出重点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%A6%E4%BC%9A%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E8%B4%B4%E6%96%87%E5%AD%97"><span class="toc-number">4.3.</span> <span class="toc-text">学会什么时候贴文字</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%BC%B1%E6%99%BA%E4%B8%80%E6%A0%B7%E7%9A%84%E6%8F%90%E9%97%AE"><span class="toc-number">5.</span> <span class="toc-text">什么是弱智一样的提问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%90%8C%E6%96%B0%E6%BB%9A%E7%B2%97"><span class="toc-number">6.</span> <span class="toc-text">萌新滚粗</span></a></li></ol>
+      </li>
+    </ul>
+  </div>
+
+
+
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+          <a href="#comment-tab1" class="mdui-ripple">livere</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: [''],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+        <div id="comment-tab1" class="mdui-p-a-2">
+          <div id="lv-container" data-id="city" data-uid="">
+  <script type="text/javascript">
+    (function (d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+      if (typeof LivereTower === 'function') { return; }
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript>Please enable JavaScript to view the comments powered by LiveRe.</noscript>
+</div>
+        </div>
+      
+    </div>
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+        <a href="https://beian.miit.gov.cn" rel="noopener" target="_blank"></a>
+      
+      <span>
+        &copy; 2015 - 2020 
+        
+          <span style="color:#d9333f" class="iconfont icon-heart"></span>
+        
+        brokenpoems
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span>Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span>Theme: <a href="https://github.com/kb1000fx/Meadow" rel="noopener" target="_blank">Meadow</a></span>
+        </div>
+      
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>总访客量 <span id="busuanzi_value_site_uv"></span></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>总访问量 <span id="busuanzi_value_site_pv"></span></span>
+        </div>
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"left","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+</html >

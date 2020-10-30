@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+    
+        <link rel="shortcut icon" href="https://www.gravatar.com/avatar/54866?s=256&amp;d=identicon">
+        
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+    
+    
+    <title>
+        
+            关于一次使用Github fork库并使用gnupg提交至github&amp;pull requests的经历 | Nothing...
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Nothing..." type="application/atom+xml">
+</head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-blue">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">Nothing...</a>
+    <a href="/" class="header-subtitle mdui-typo-headline">Nothing</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-2">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">主页</div>
+                </a>
+            
+                
+                <a href="/tags/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-bookmark"></i>
+                    </div>
+                    <div class="mdui-list-item-content">标签</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">分类</div>
+                </a>
+            
+                
+                <a href="/archives/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-archive"></i>
+                    </div>
+                    <div class="mdui-list-item-content">归档</div>
+                </a>
+            
+                
+                <a href="/tools/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-tools"></i>
+                    </div>
+                    <div class="mdui-list-item-content">工具箱</div>
+                </a>
+            
+                
+                <a href="/about/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-user"></i>
+                    </div>
+                    <div class="mdui-list-item-content">关于</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">夜间模式</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-2">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="https://gitee.com/brokenpoems/picture/raw/master/logo.png"/>
+                
+            </div>
+            <div class="sidebar-author-name">brokenpoems</div>
+            <div class="sidebar-description">None。。。</div>
+        </div>
+        <div class="sidebar-links">
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
+                    <a href="/brokenpoems@foxmail.com" class="mdui-chip-title">E-Mail</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                    <a target="_blank" rel="noopener" href="https://github.com/brokenpoems" class="mdui-chip-title">GitHub</a>
+                </div>
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">友情链接</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://garybear.cn/hexo-theme-meadow/" class="mdui-list-item mdui-ripple">
+                            Meadow说明文档
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://brokenpoems.cf" class="mdui-list-item mdui-ripple">
+                            Typecho Blog
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://rwby.cf" class="mdui-list-item mdui-ripple">
+                            Hello World
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/2020/10/22/%E5%85%B3%E4%BA%8E%E4%B8%80%E6%AC%A1%E4%BD%BF%E7%94%A8Github%20fork%E5%BA%93%E5%B9%B6%E4%BD%BF%E7%94%A8gnupg%E6%8F%90%E4%BA%A4%E8%87%B3github&pull%20requests%E7%9A%84%E7%BB%8F%E5%8E%86/">关于一次使用Github fork库并使用gnupg提交至github&amp;pull requests的经历</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2020-10-22
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2020-10-30
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/Something/">Something</a>
+    </span>
+    
+      <span>
+        <span class="iconfont icon-eye"></span>
+        阅读次数:&nbsp;
+        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+      </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=关于一次使用Github fork库并使用gnupg提交至github&amp;pull requests的经历&url=http://crfv.cf/2020/10/22/%E5%85%B3%E4%BA%8E%E4%B8%80%E6%AC%A1%E4%BD%BF%E7%94%A8Github%20fork%E5%BA%93%E5%B9%B6%E4%BD%BF%E7%94%A8gnupg%E6%8F%90%E4%BA%A4%E8%87%B3github&pull%20requests%E7%9A%84%E7%BB%8F%E5%8E%86/&pic=http://crfv.cf/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=关于一次使用Github fork库并使用gnupg提交至github&amp;pull requests的经历&url=http://crfv.cf/2020/10/22/%E5%85%B3%E4%BA%8E%E4%B8%80%E6%AC%A1%E4%BD%BF%E7%94%A8Github%20fork%E5%BA%93%E5%B9%B6%E4%BD%BF%E7%94%A8gnupg%E6%8F%90%E4%BA%A4%E8%87%B3github&pull%20requests%E7%9A%84%E7%BB%8F%E5%8E%86/&via=brokenpoems" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://crfv.cf/2020/10/22/%E5%85%B3%E4%BA%8E%E4%B8%80%E6%AC%A1%E4%BD%BF%E7%94%A8Github%20fork%E5%BA%93%E5%B9%B6%E4%BD%BF%E7%94%A8gnupg%E6%8F%90%E4%BA%A4%E8%87%B3github&pull%20requests%E7%9A%84%E7%BB%8F%E5%8E%86/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=http://crfv.cf/2020/10/22/%E5%85%B3%E4%BA%8E%E4%B8%80%E6%AC%A1%E4%BD%BF%E7%94%A8Github%20fork%E5%BA%93%E5%B9%B6%E4%BD%BF%E7%94%A8gnupg%E6%8F%90%E4%BA%A4%E8%87%B3github&pull%20requests%E7%9A%84%E7%BB%8F%E5%8E%86/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://crfv.cf/2020/10/22/%E5%85%B3%E4%BA%8E%E4%B8%80%E6%AC%A1%E4%BD%BF%E7%94%A8Github%20fork%E5%BA%93%E5%B9%B6%E4%BD%BF%E7%94%A8gnupg%E6%8F%90%E4%BA%A4%E8%87%B3github&pull%20requests%E7%9A%84%E7%BB%8F%E5%8E%86/&title=关于一次使用Github fork库并使用gnupg提交至github&amp;pull requests的经历" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=Nothing...&title=关于一次使用Github fork库并使用gnupg提交至github&amp;pull requests的经历&summary=None。。。&pics=http://crfv.cf/null&url=http://crfv.cf/2020/10/22/%E5%85%B3%E4%BA%8E%E4%B8%80%E6%AC%A1%E4%BD%BF%E7%94%A8Github%20fork%E5%BA%93%E5%B9%B6%E4%BD%BF%E7%94%A8gnupg%E6%8F%90%E4%BA%A4%E8%87%B3github&pull%20requests%E7%9A%84%E7%BB%8F%E5%8E%86/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=http://crfv.cf/2020/10/22/%E5%85%B3%E4%BA%8E%E4%B8%80%E6%AC%A1%E4%BD%BF%E7%94%A8Github%20fork%E5%BA%93%E5%B9%B6%E4%BD%BF%E7%94%A8gnupg%E6%8F%90%E4%BA%A4%E8%87%B3github&pull%20requests%E7%9A%84%E7%BB%8F%E5%8E%86/&text=关于一次使用Github fork库并使用gnupg提交至github&amp;pull requests的经历" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <!--markdown-->
+<p><img src="https://brokenpoems.cf/usr/uploads/2020/10/2769271191.png" alt="head.png"><br>#起因<br>由于sublime-CoolFormat作者对其他衍生语言(e.g:Json(sublime),C improved)等的文件删除bug<br>见issue(#12,#4),我查看了源代码并进行了稍许修改<br>#经过<br>为了作者可以看到并修改我的意见,我决定使用pull requests 提交<del>实际上是想要有贡献=。=</del>,而最近又研究了GnuPG的密钥,GitHub又支持PGP密钥,为了commit的”小绿锁”我使用了PGP密钥<br>由于我校新机房由于特殊原因<del>高考资料</del>停用,我们只得使用旧机房—WindowsXP系统emmm……<br>于是,我使用的gpg4win是v2.3.4版的，gpg v2.0.30 T^T，git v2.10.0-32-bit</p>
+<p>##git 配置</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &lt;username of github&gt;</span><br><span class="line">git config --global user.email &lt;email of github&gt;</span><br><span class="line">git config --global commit.gpgsign <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p> <del>实际上username of github和可以随便,但要上传到Github上,so,使用username of github</del></p>
+<p>##gpg4win安装注意事项</p>
+<p> 不要装在%PROGARMFILES%等路径中有空格和中文的地方!!!<br>ps:WinXP要无空格，Win10实测不用</p>
+<p>##生成PGP密钥(对bash窗口过敏者慎用)<br>题外话:gpg汉化只要将…\GNU\GnuPG\share\locale\zh_CN 改成 zh就OK了<br><img src="https://brokenpoems.cf/usr/uploads/2020/10/2850637255.png" alt="rename.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gpg --gen-key</span><br></pre></td></tr></table></figure>
+<p><img src="https://brokenpoems.cf/usr/uploads/2020/10/3096991625.png" alt="answer.png"><br>然后输入密码,之后疯狂移动鼠标，效果如下:<br><img src="https://brokenpoems.cf/usr/uploads/2020/10/262257880.png" alt="result.png"><br>然后就可以</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gpg [--keyserver &lt;keyserver&gt;] --send-key &lt;username&gt;</span><br></pre></td></tr></table></figure>
+<p>上传到公钥服务器上了<br>国内可用公钥服务器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pgp.mit.edu(卡...)</span><br><span class="line">keys.gnupg.net</span><br><span class="line">subkeys.pgp.net</span><br><span class="line">pool.sks-keyservers.net</span><br><span class="line">zimmermann.mayfirst.org</span><br><span class="line">keyserver.ubuntu.com</span><br></pre></td></tr></table></figure>
+<p>Attention!</p>
+<ul>
+<li>请记好你的密码,使用如下命令导出公钥和私钥:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">公钥:gpg -a --<span class="built_in">export</span> &lt;username&gt; -o &lt;filename of publickey&gt;</span><br><span class="line">私钥:gpg -a --export-secret-key &lt;username&gt; -o &lt;filename of secretkey&gt;</span><br></pre></td></tr></table></figure></li>
+<li>请生成一份吊销证书防止私钥丢失,公钥服务器上的公钥没法删除<del>亲身经历…但我拿DiskGenius强找内存找回了…</del><br><img src="https://brokenpoems.cf/usr/uploads/2020/10/4156619645.png" alt="testuserrevoke.png"><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gpg --gen-revoke &lt;username&gt;</span><br></pre></td></tr></table></figure></li>
+<li>真实姓名和email<del>应该</del>和Github的username和email一致??</li>
+</ul>
+<p>###配置signingkey和gpg.program</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.signingkey &lt;刚才生成的Keyid&gt;</span><br><span class="line">git config --global gpg.program &lt;gpg.exe所在目录&gt;</span><br></pre></td></tr></table></figure>
+<p>e.g:git config –global user.signingkey B18FDAD9<br>B18FDAD9是刚才testuser的keyid<br>也可以用subid:B2D7335D<br>也可以使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gpg -k [--keyid-format long]</span><br></pre></td></tr></table></figure>
+<p>如使用–keyid-format long就是gpg keyid的16bit长格式:BC9378DFB18FDAD9<br>也就是Keyid可以使用B18FDAD9,B2D7335D和BC9378DFB18FDAD9</p>
+<p>gpg.exe所在目录 再强调一次不能有空格(WinXP),我使用的目录是在C:\GnuPG\pub\gpg.exe</p>
+<p>##开始gpg提交<br>###fork 库至Github的自己的库上<br>点一下 OK<br><img src="https://brokenpoems.cf/usr/uploads/2020/10/652142559.png" alt="fork.png"></p>
+<p>###git clone至本地</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/&lt;git hub 用户名&gt;/&lt;库名&gt;.git</span><br></pre></td></tr></table></figure>
+<p>###git checkout -b</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b &lt;newbarch&gt;</span><br></pre></td></tr></table></figure>
+<p>建新分支<br>###进行修改<br>省略1000字…<br>###git add 修改文件<br>你要是懒也可以</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+<p>###git commit<br>应该要求你输入密码了…<br>###git push</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
+<p>###去到github上的你的库<br>应该有了newbarch分支<br>###pull requests<br><img src="https://brokenpoems.cf/usr/uploads/2020/10/4036787519.png" alt="pull.png"><br>ps: git 配置代理：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy socks5://127.0.0.1:1080 </span><br><span class="line">git config --global https.proxy socks5://127.0.0.1:1080</span><br></pre></td></tr></table></figure>
+<p>记住Git push的密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global credential.helper store</span><br></pre></td></tr></table></figure>
+  </div>
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> --- 本文结束 <i class="iconfont icon-heartbeat" style="font-size:24px;"></i> The End --- </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/2020/10/04/%E5%9B%BE%E6%9F%93%E8%89%B2/">
+        <span>图染色</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/2020/10/22/%E5%85%B3%E4%BA%8E%E4%B8%80%E6%AC%A1%E4%BD%BF%E7%94%A8Github%20fork%E5%BA%93%E5%B9%B6%E4%BD%BF%E7%94%A8gnupg%E6%8F%90%E4%BA%A4%E8%87%B3github&pull%20requests%E7%9A%84%E7%BB%8F%E5%8E%86/" id="toc-header" class="mdui-ripple">文章目录</a>
+        
+      </li>
+    </ul>
+  </div>
+
+
+
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+          <a href="#comment-tab1" class="mdui-ripple">livere</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: [''],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+        <div id="comment-tab1" class="mdui-p-a-2">
+          <div id="lv-container" data-id="city" data-uid="">
+  <script type="text/javascript">
+    (function (d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+      if (typeof LivereTower === 'function') { return; }
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript>Please enable JavaScript to view the comments powered by LiveRe.</noscript>
+</div>
+        </div>
+      
+    </div>
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+        <a href="https://beian.miit.gov.cn" rel="noopener" target="_blank"></a>
+      
+      <span>
+        &copy; 2015 - 2020 
+        
+          <span style="color:#d9333f" class="iconfont icon-heart"></span>
+        
+        brokenpoems
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span>Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span>Theme: <a href="https://github.com/kb1000fx/Meadow" rel="noopener" target="_blank">Meadow</a></span>
+        </div>
+      
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>总访客量 <span id="busuanzi_value_site_uv"></span></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>总访问量 <span id="busuanzi_value_site_pv"></span></span>
+        </div>
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"left","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+</html >
